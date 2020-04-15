@@ -17,6 +17,15 @@ public class MainActivity extends AppCompatActivity {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("https://tvrgomel.by/");
 
+        webView.setWebViewClient(new MyWebViewClient());
+    }
 
+    @Override
+    public void onBackPressed(){
+        if (webView.canGoBack()){
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }
