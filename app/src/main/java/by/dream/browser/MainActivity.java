@@ -1,5 +1,8 @@
 package by.dream.browser;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
 import android.webkit.WebView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,5 +30,14 @@ public class MainActivity extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void onClick(View view) {
+
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://tvrgomel.by/"));
+
+        //Intent intent = new Intent ("by.dream.browser");
+        //intent.setData(Uri.parse("https://tvrgomel.by/"));
+        startActivity(intent);
     }
 }
